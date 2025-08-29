@@ -47,32 +47,32 @@
                             <div class="account__divider">
                                 <span>OR</span>
                             </div>
-                            <form action="#" class="account__form">
+                            <form action="/api/signup.php" method="POST" class="account__form">
                                 <div class="row gutter-20">
                                     <div class="col-md-6">
                                         <div class="form-grp">
-                                            <label for="fast-name">First Name</label>
-                                            <input type="text" id="fast-name" placeholder="First Name">
+                                            <label for="first-name">First Name</label>
+                                            <input type="text" id="first-name" name="first_name" placeholder="First Name" required>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-grp">
-                                            <label for="last-name">Last name</label>
-                                            <input type="text" id="last-name" placeholder="Last name">
+                                            <label for="last-name">Last Name</label>
+                                            <input type="text" id="last-name" name="last_name" placeholder="Last name" required>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="form-grp">
                                     <label for="email">Email</label>
-                                    <input type="email" id="email" placeholder="email">
+                                    <input type="email" id="email" name="email" placeholder="Email" required>
                                 </div>
                                 <div class="form-grp">
                                     <label for="password">Password</label>
-                                    <input type="password" id="password" placeholder="password">
+                                    <input type="password" id="password" name="password" placeholder="Password" required>
                                 </div>
                                 <div class="form-grp">
                                     <label for="confirm-password">Confirm Password</label>
-                                    <input type="password" id="confirm-password" placeholder="Confirm Password">
+                                    <input type="password" id="confirm-password" name="confirm_password" placeholder="Confirm Password" required>
                                 </div>
                                 <button type="submit" class="btn btn-two arrow-btn">Sign Up</button>
                             </form>
