@@ -1,3 +1,8 @@
+<?php
+session_start();
+$user_name = $_SESSION["first_name"] ?? null;
+?>
+
 <!doctype html>
 <html class="no-js" lang="en">
 <head>
@@ -91,15 +96,27 @@
                                     <ul class="list-wrap">
                                         <li class="search"><a href="javascript:void(0)"><i class="flaticon-search-1"></i></a></li>
                                         <li class="header-btn">
-                                            <a href="login.php" class="tg-border-btn">
-                                                <svg preserveAspectRatio="none" viewBox="0 0 157 48" fill="none">
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M131.75 2L155.75 25L131.75 47L148.75 24L131.75 2Z" fill="currentColor"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M25 1L1 24.5111L25 47L8 23.4889L25 1Z" fill="currentColor"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M24.75 1L0.75 25L23.75 47H131.75L155.75 25L131.75 1H24.75Z" stroke="currentColor" stroke-width="1.5"></path>
-                                                </svg>
-                                                <i class="flaticon-edit"></i>
-                                                Sign In
-                                            </a>
+                                            <?php if ($user_name): ?>
+                                                <a href="/api/logout.php" class="tg-border-btn">
+                                                    <svg preserveAspectRatio="none" viewBox="0 0 157 48" fill="none">
+                                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M131.75 2L155.75 25L131.75 47L148.75 24L131.75 2Z" fill="currentColor"></path>
+                                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M25 1L1 24.5111L25 47L8 23.4889L25 1Z" fill="currentColor"></path>
+                                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M24.75 1L0.75 25L23.75 47H131.75L155.75 25L131.75 1H24.75Z" stroke="currentColor" stroke-width="1.5"></path>
+                                                    </svg>
+                                                    <i class="flaticon-edit"></i>
+                                                    <?php echo $user_name; ?> Logout
+                                                </a>
+                                            <?php else: ?>
+                                                <a href="login.php" class="tg-border-btn">
+                                                    <svg preserveAspectRatio="none" viewBox="0 0 157 48" fill="none">
+                                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M131.75 2L155.75 25L131.75 47L148.75 24L131.75 2Z" fill="currentColor"></path>
+                                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M25 1L1 24.5111L25 47L8 23.4889L25 1Z" fill="currentColor"></path>
+                                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M24.75 1L0.75 25L23.75 47H131.75L155.75 25L131.75 1H24.75Z" stroke="currentColor" stroke-width="1.5"></path>
+                                                    </svg>
+                                                    <i class="flaticon-edit"></i>
+                                                    Sign In
+                                                </a>
+                                            <?php endif; ?>
                                         </li>
                                         <li class="side-toggle-icon">
                                             <span></span>
