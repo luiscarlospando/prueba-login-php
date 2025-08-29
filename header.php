@@ -98,7 +98,7 @@
                                                     <path fill-rule="evenodd" clip-rule="evenodd" d="M24.75 1L0.75 25L23.75 47H131.75L155.75 25L131.75 1H24.75Z" stroke="currentColor" stroke-width="1.5"></path>
                                                 </svg>
                                                 <i class="flaticon-edit"></i>
-                                                ~sing in
+                                                Sign In
                                             </a>
                                         </li>
                                         <li class="side-toggle-icon">
