@@ -47,14 +47,14 @@
                             <div class="account__divider">
                                 <span>OR</span>
                             </div>
-                            <form action="/api/signup.php" class="account__form">
+                            <form action="/api/login.php" method="POST" class="account__form">
                                 <div class="form-grp">
                                     <label for="email">Email</label>
-                                    <input id="email" type="text" placeholder="email">
+                                    <input id="email" name="email" type="email" placeholder="Email" required>
                                 </div>
                                 <div class="form-grp">
                                     <label for="password">Password</label>
-                                    <input id="password" type="text" placeholder="password">
+                                    <input id="password" name="password" type="password" placeholder="Password" required>
                                 </div>
                                 <div class="account__check">
                                     <div class="account__check-remember">
