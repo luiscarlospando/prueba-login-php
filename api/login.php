@@ -6,7 +6,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $password = $_POST["password"] ?? "";
 
     if ($email === "" || $password === "") {
-        die("All fields are required.");
+        header("Location: /login.php?error=empty");
+        exit();
     }
 
     $stmt = $conn->prepare(
@@ -29,10 +30,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             header("Location: /index.php");
             exit();
         } else {
-            echo "Your password is incorrect.";
+            header("Location: /login.php?error=invalid_password");
+            exit();
         }
     } else {
-        echo "User not found.";
+        header("Location: /login.php?error=user_not_found");
+        exit();
     }
 
     $stmt->close();

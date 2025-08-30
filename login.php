@@ -47,6 +47,21 @@
                             <div class="account__divider">
                                 <span>OR</span>
                             </div>
+                            <?php if (isset($_GET["error"])): ?>
+                                <div class="alert alert-danger">
+                                    <?php if (
+                                        $_GET["error"] === "invalid_password"
+                                    ) {
+                                        echo "Incorrect password.";
+                                    } elseif (
+                                        $_GET["error"] === "user_not_found"
+                                    ) {
+                                        echo "User not found.";
+                                    } elseif ($_GET["error"] === "empty") {
+                                        echo "All fields are required.";
+                                    } ?>
+                                </div>
+                            <?php endif; ?>
                             <form action="/api/login.php" method="POST" class="account__form">
                                 <div class="form-grp">
                                     <label for="email">Email</label>
