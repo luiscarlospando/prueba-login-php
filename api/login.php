@@ -25,7 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $_SESSION["user_id"] = $id;
             $_SESSION["first_name"] = $first_name;
 
-            // Redirigir a al index.php
+            // Redirigir a index.php
             header("Location: /index.php");
             exit();
         } else {

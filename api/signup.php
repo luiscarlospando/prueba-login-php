@@ -23,10 +23,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         die("Passwords do not match.");
     }
 
-    // Hash de contraseña
+    // Hash de la contraseña
     $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
-    // Insertar en la tabla users
+    // Insertar en la tabla 'users'
     $stmt = $conn->prepare(
         "INSERT INTO users (first_name, last_name, email, password) VALUES (?, ?, ?, ?)",
     );
